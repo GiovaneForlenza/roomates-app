@@ -3,10 +3,12 @@ import React, { useState, createContext } from "react";
 export const AppContext = createContext();
 
 export const AppContextProvider = (props) => {
-  const HEROKU_URL = "https://roomates-app.herokuapp.com/";
+  const [herokuURL, setHerokuURL] = useState(
+    "https://roomates-app.herokuapp.com/"
+  );
 
   return (
-    <AppContext.Provider values={{ HEROKU_URL }}>
+    <AppContext.Provider values={{ herokuURL }}>
       {props.children}
     </AppContext.Provider>
   );

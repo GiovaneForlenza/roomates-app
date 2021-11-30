@@ -10,9 +10,9 @@ import { AppContext } from "../../Contexts/AppContext";
 
 function Expenses() {
   const [expenses, setExpenses] = useState([]);
-  const { HEROKU_URL } = useContext(AppContext);
+  const { herokuURL } = useContext(AppContext);
   useEffect(() => {
-    axios.post(`${HEROKU_URL}/get-expenses`).then((res) => {
+    axios.post(`${herokuURL}/get-expenses`).then((res) => {
       if (res.message) {
         console.log(res.message);
       } else {
