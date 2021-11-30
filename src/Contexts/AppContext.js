@@ -8,7 +8,7 @@ export const AppContextProvider = (props) => {
   );
 
   return (
-    <AppContext.Provider values={{ herokuURL }}>
+    <AppContext.Provider value={{ herokuURL }}>
       {props.children}
     </AppContext.Provider>
   );
