@@ -2,27 +2,39 @@
 
 @media only screen and (max-width: 600px) {
   .expenses-container {
-    margin-top: 20px;
-    .expense {
-      box-shadow: $boxShadow;
-      border-radius: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-direction: row;
-      padding: 10px;
-      box-sizing: border-box;
-      .date {
-        margin-right: 10px;
+    border: 1px solid #000;
+    .no-expenses-container {
+      margin-top: 10px;
+      border: 1px solid #000;
+      span {
+        font-size: 25px;
+        font-weight: bold;
       }
-      .content {
-        width: 40%;
-      }
-      .icon {
-        padding: 5px;
-      }
-      .icon-red {
-        color: red;
+    }
+    .expense-container {
+      border: 1px solid #f00;
+      margin-top: 20px;
+      .expense {
+        box-shadow: $boxShadow;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 10px;
+        box-sizing: border-box;
+        .date {
+          margin-right: 10px;
+        }
+        .content {
+          width: 40%;
+        }
+        .icon {
+          padding: 5px;
+        }
+        .icon-red {
+          color: red;
+        }
       }
     }
   }

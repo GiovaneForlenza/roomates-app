@@ -13,30 +13,34 @@ function Expenses() {
   const [expenses, setExpenses] = useState([]);
   const { herokuURL } = useContext(AppContext);
   useEffect(() => {
-    axios.post(`${herokuURL}/get-expenses`).then((res) => {
+    axios.post(`${HEROKU_URL}/get-expenses`).then((res) => {
+      console.log(res.data);
       if (res.message) {
         console.log(res.message);
       } else {
-        console.log(res.data);
         setExpenses(res.data);
       }
     });
   }, []);
   return (
-    <>
-      {expenses.lenght !== 0 ? (
-        expenses.map((expense) => {
-          return (
-            <Expense key={expense.expenseId.toString()} expense={expense} />
-          );
-        })
+    <div className="expenses-container">
+      {expenses.length !== 0 ? (
+        <>
+          {expenses.map((expense) => {
+            return (
+              <Expense key={expense.expenseId.toString()} expense={expense} />
+            );
+          })}
+          <ExpenseSummary />
+          <Spacer height={60} />
+        </>
       ) : (
-        <h1>No data</h1>
+        <div className="no-expenses-container">
+          <span>No expenses this week</span>
+        </div>
       )}
       <AddNewExpense />
-      <ExpenseSummary />
-      <Spacer height={60} />
-    </>
+    </div>
   );
 }
 

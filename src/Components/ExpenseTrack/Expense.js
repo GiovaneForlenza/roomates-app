@@ -5,9 +5,8 @@ import "../../Style/Expenses-Track/expenses.scss";
 
 const Expense = (props) => {
   const { expenseId, amount, date, whoPaid, store } = props.expense;
-  // console.log(date);
   return (
-    <div className="expenses-container">
+    <div className="expense-container">
       <div className="expense">
         <div className="date">{date}</div>
         <div className="content">
