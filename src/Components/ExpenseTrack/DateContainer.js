@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import dateFormat from "dateformat";
 
-import "../../Style/Expenses-Track/dates.scss";
+import "../../Style/ExpensesTrack/dates.scss";
 
 function DateContainer() {
   const [changer, setChanger] = useState(0);

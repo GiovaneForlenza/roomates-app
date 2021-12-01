@@ -7,6 +7,7 @@ import Spacer from "../Spacer";
 import ExpenseSummary from "./ExpenseSummary";
 
 import { AppContext } from "../../Contexts/AppContext";
+import "../../Style/ExpensesTrack/expenses.scss";
 
 function Expenses() {
   const HEROKU_URL = "https://roomates-app.herokuapp.com";
@@ -14,7 +15,7 @@ function Expenses() {
   const { herokuURL } = useContext(AppContext);
   useEffect(() => {
     axios.post(`${HEROKU_URL}/get-expenses`).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       if (res.message) {
         console.log(res.message);
       } else {
@@ -31,15 +32,15 @@ function Expenses() {
               <Expense key={expense.expenseId.toString()} expense={expense} />
             );
           })}
-          <ExpenseSummary />
-          <Spacer height={60} />
+          {/* <ExpenseSummary />
+          <Spacer height={60} /> */}
         </>
       ) : (
         <div className="no-expenses-container">
           <span>No expenses this week</span>
         </div>
       )}
-      <AddNewExpense />
+      {/* <AddNewExpense /> */}
     </div>
   );
 }

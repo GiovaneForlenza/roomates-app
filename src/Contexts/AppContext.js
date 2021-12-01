@@ -4,7 +4,7 @@ export const AppContext = createContext();
 
 export const AppContextProvider = (props) => {
   const [herokuURL, setHerokuURL] = useState(
-    "https://roomates-app.herokuapp.com"
+    "https://cors-anywhere.herokuapp.com/https://roomates-app.herokuapp.com"
   );
 
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../Style/Expenses-Track/expenseSummary.scss";
+import "../../Style/ExpensesTrack/expenseSummary.scss";
 
 function ExpenseSummary() {
   return <div className="expenseResumeContainer">Resume</div>;

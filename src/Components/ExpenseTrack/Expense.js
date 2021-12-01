@@ -1,7 +1,7 @@
 import React from "react";
 import { FiEdit } from "react-icons/fi";
 import { AiFillDelete } from "react-icons/ai";
-import "../../Style/Expenses-Track/expenses.scss";
+import "../../Style/ExpensesTrack/expense.scss";
 
 const Expense = (props) => {
   const { expenseId, amount, date, whoPaid, store } = props.expense;

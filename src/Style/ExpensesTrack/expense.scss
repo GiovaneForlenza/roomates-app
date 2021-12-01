@@ -1,0 +1,27 @@
+@import "../global.scss";
+
+.expense-container {
+  margin-top: 20px;
+  .expense {
+    box-shadow: $boxShadow;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px;
+    box-sizing: border-box;
+    .date {
+      margin-right: 10px;
+    }
+    .content {
+      width: 40%;
+    }
+    .icon {
+      padding: 5px;
+    }
+    .icon-red {
+      color: red;
+    }
+  }
+}

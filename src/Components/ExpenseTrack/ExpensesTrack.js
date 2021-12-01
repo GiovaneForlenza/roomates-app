@@ -2,7 +2,7 @@ import React from "react";
 import DateContainer from "./DateContainer";
 import Expenses from "./Expenses";
 
-import "../../Style/Expenses-Track/trackContainer.scss";
+import "../../Style/ExpensesTrack/trackContainer.scss";
 
 function ExpensesTrack() {
   return (
