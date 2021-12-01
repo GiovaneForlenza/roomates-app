@@ -2,19 +2,19 @@ import React, { useEffect, useState, useContext } from "react";
 
 import Expense from "./Expense";
 import axios from "axios";
-import AddNewExpense from "./AddNewExpense";
-import Spacer from "../Spacer";
-import ExpenseSummary from "./ExpenseSummary";
+// import AddNewExpense from "./AddNewExpense";
+// import Spacer from "../Spacer";
+// import ExpenseSummary from "./ExpenseSummary";
 
 import { AppContext } from "../../Contexts/AppContext";
 import "../../Style/ExpensesTrack/expenses.scss";
 
 function Expenses() {
-  const HEROKU_URL = "https://roomates-app.herokuapp.com";
   const [expenses, setExpenses] = useState([]);
   const { herokuURL } = useContext(AppContext);
+
   useEffect(() => {
-    axios.post(`${HEROKU_URL}/get-expenses`).then((res) => {
+    axios.get(`${herokuURL}/get-expenses`).then((res) => {
       if (res.message) {
         console.log(res.message);
       } else {
@@ -22,6 +22,7 @@ function Expenses() {
       }
     });
   }, []);
+
   return (
     <div className="expenses-container">
       {expenses.length !== 0 ? (
