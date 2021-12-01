@@ -9,23 +9,31 @@ import ExpenseSummary from "./ExpenseSummary";
 import { AppContext } from "../../Contexts/AppContext";
 
 function Expenses() {
+  const HEROKU_URL = "https://roomates-app.herokuapp.com";
   const [expenses, setExpenses] = useState([]);
   const { herokuURL } = useContext(AppContext);
   useEffect(() => {
     axios.post(`${herokuURL}/get-expenses`).then((res) => {
       if (res.message) {
+        console.log("a");
         console.log(res.message);
       } else {
+        console.log(res.data);
         setExpenses(res.data);
       }
     });
   }, []);
-  // console.log(expenses);
   return (
     <>
-      {expenses.map((expense) => {
-        return <Expense key={expense.expenseId.toString()} expense={expense} />;
-      })}
+      {/* {expenses.lenght !== 0 ? (
+        expenses.map((expense) => {
+          return (
+            <Expense key={expense.expenseId.toString()} expense={expense} />
+          );
+        })
+      ) : (
+        <h1>No data</h1>
+      )} */}
       <AddNewExpense />
       <ExpenseSummary />
       <Spacer height={60} />
