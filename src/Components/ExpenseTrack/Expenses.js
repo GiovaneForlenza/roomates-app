@@ -25,7 +25,7 @@ function Expenses() {
   }, []);
   return (
     <>
-      {/* {expenses.lenght !== 0 ? (
+      {expenses.lenght !== 0 ? (
         expenses.map((expense) => {
           return (
             <Expense key={expense.expenseId.toString()} expense={expense} />
@@ -33,7 +33,7 @@ function Expenses() {
         })
       ) : (
         <h1>No data</h1>
-      )} */}
+      )}
       <AddNewExpense />
       <ExpenseSummary />
       <Spacer height={60} />
