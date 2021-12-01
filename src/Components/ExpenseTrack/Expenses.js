@@ -14,7 +14,7 @@ function Expenses() {
   const [expenses, setExpenses] = useState([]);
   const { herokuURL } = useContext(AppContext);
   useEffect(() => {
-    axios.get(`${HEROKU_URL}/get-expenses`).then((res) => {
+    axios.post(`${HEROKU_URL}/get-expenses`).then((res) => {
       if (res.message) {
         console.log(res.message);
       } else {
@@ -39,7 +39,7 @@ function Expenses() {
           <span>No expenses this week</span>
         </div>
       )}
-      <AddNewExpense />
+      {/* <AddNewExpense /> */}
     </div>
   );
 }
