@@ -1,7 +1,7 @@
 import React from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 
-import "../../Style/addNewExpense.scss";
+import "../../Style/Expenses-Track/addNewExpense.scss";
 
 function AddNewExpense() {
   return (

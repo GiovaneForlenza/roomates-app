@@ -15,7 +15,6 @@ function Expenses() {
   useEffect(() => {
     axios.post(`${herokuURL}/get-expenses`).then((res) => {
       if (res.message) {
-        console.log("a");
         console.log(res.message);
       } else {
         console.log(res.data);
