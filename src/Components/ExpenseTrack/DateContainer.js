@@ -30,13 +30,13 @@ function DateContainer() {
     <div className="dates-container">
       <header className="dates-header">
         <div className="controls">
-          <div className="circle" onClick={() => changeDate(-7)}>
+          <div className="roundButtonSmall" onClick={() => changeDate(-7)}>
             <FiChevronLeft />
           </div>
           <div className="dates">
             {firstday} / {lastday}
           </div>
-          <div className="circle" onClick={() => changeDate(7)}>
+          <div className="roundButtonSmall" onClick={() => changeDate(7)}>
             <FiChevronRight />
           </div>
         </div>

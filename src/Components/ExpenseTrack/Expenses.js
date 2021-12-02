@@ -2,16 +2,18 @@ import React, { useEffect, useState, useContext } from "react";
 
 import Expense from "./Expense";
 import axios from "axios";
-// import AddNewExpense from "./AddNewExpense";
-// import Spacer from "../Spacer";
-// import ExpenseSummary from "./ExpenseSummary";
+import AddNewExpense from "./AddNewExpense";
+import Spacer from "../Spacer";
+import ExpenseSummary from "./ExpenseSummary";
 
 import { AppContext } from "../../Contexts/AppContext";
+import { ExpenseContext } from "../../Contexts/ExpenseContext";
 import "../../Style/ExpensesTrack/expenses.scss";
 
 function Expenses() {
   const [expenses, setExpenses] = useState([]);
   const { herokuURL } = useContext(AppContext);
+  const { addToAmount } = useContext(ExpenseContext);
 
   useEffect(() => {
     axios.get(`${herokuURL}/get-expenses`).then((res) => {
@@ -32,15 +34,16 @@ function Expenses() {
               <Expense key={expense.expenseId.toString()} expense={expense} />
             );
           })}
-          {/* <ExpenseSummary />
-          <Spacer height={60} /> */}
+          <ExpenseSummary />
+
+          <Spacer height={60} />
         </>
       ) : (
         <div className="no-expenses-container">
           <span>No expenses this week</span>
         </div>
       )}
-      {/* <AddNewExpense /> */}
+      <AddNewExpense />
     </div>
   );
 }

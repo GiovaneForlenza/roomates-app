@@ -1,15 +1,27 @@
-import React, { useContext } from "react";
-import { FiEdit } from "react-icons/fi";
-import { AiFillDelete } from "react-icons/ai";
-import "../../Style/ExpensesTrack/expense.scss";
+import React, { useContext, useEffect } from "react";
+// import { FiEdit } from "react-icons/fi";
+// import { AiFillDelete } from "react-icons/ai";
+
 import { ExpenseContext } from "../../Contexts/ExpenseContext";
+import "../../Style/ExpensesTrack/expense.scss";
 
 const Expense = (props) => {
   const { expenseId, amount, date, whoPaid, store } = props.expense;
-  const { setIsSingleRequestOpen } = useContext(ExpenseContext);
+  const { fillExpenseInfo, day, setDay, month, setMonth, addToAmount } =
+    useContext(ExpenseContext);
+
+  const parsedAmount = parseFloat(amount).toFixed(2);
+
   function handleClick() {
-    setIsSingleRequestOpen(true);
+    fillExpenseInfo("fill", expenseId, parsedAmount, date, whoPaid, store);
   }
+
+  useEffect(() => {
+    setDay(date.substring(0, 2));
+    setMonth(date.substring(6, 3));
+    addToAmount(whoPaid);
+  }, []);
+
   return (
     <div
       className="expense-container"
@@ -18,15 +30,21 @@ const Expense = (props) => {
       }}
     >
       <div className="expense">
-        <div className="date">{date}</div>
+        <div className="date">
+          <span className="day">{day}</span>
+          <span className="month"> {month}</span>
+        </div>
         <div className="content">
-          <div className="amount">${parseFloat(amount).toFixed(2)}</div>
+          <div className="">
+            <div className="amount">${parsedAmount}</div>
+            <div className="store">{store}</div>
+          </div>
           <div className="whoPaid">{whoPaid}</div>
         </div>
-        <div className="icons">
+        {/* <div className="icons">
           <FiEdit className="icon" size={20} />
           <AiFillDelete className="icon icon-red" size={20} />
-        </div>
+        </div> */}
       </div>
     </div>
   );

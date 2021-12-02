@@ -1,27 +1,39 @@
 @import "../global.scss";
 
 .expense-container {
-  margin-top: 20px;
   .expense {
-    box-shadow: $boxShadow;
-    border-radius: 5px;
+    border-bottom: 1px $clrLightGray solid;
+    // border-radius: 5px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: row;
-    padding: 10px;
+    padding: 20px 10px;
     box-sizing: border-box;
     .date {
-      margin-right: 10px;
+      margin-right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .day {
+        font-size: 20px;
+        font-weight: bold;
+      }
     }
     .content {
-      width: 40%;
-    }
-    .icon {
-      padding: 5px;
-    }
-    .icon-red {
-      color: red;
+      width: 70%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      .amount,
+      .whoPaid {
+        font-size: 20px;
+      }
+      .amount {
+        color: $clrDarkRed;
+      }
     }
   }
 }

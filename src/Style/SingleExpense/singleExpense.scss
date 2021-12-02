@@ -1,5 +1,15 @@
-@import "../../Style/SingleExpense/singleExpense.scss";
+@import "../global.scss";
 
-.singleExpense-container {
-  border: 1px solid #000;
+.singleExpenseContainer {
+  transition: 0.5s all;
+  .singleExpenseHeader {
+    margin-bottom: 30px;
+  }
+  .singleRequest {
+    .amount {
+      font-size: 30px;
+      font-weight: bold;
+      color: $clrDarkRed;
+    }
+  }
 }

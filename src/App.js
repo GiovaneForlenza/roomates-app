@@ -1,5 +1,5 @@
 import "./App.scss";
-import ExpensesTrack from "./Components/ExpenseTrack/ExpensesTrack";
+import Home from "./Pages/Home";
 import "./Components/Spacer";
 import { AppContextProvider } from "./Contexts/AppContext";
 import { ExpenseContextProvider } from "./Contexts/ExpenseContext";
@@ -9,7 +9,7 @@ function App() {
     <div className="container">
       <AppContextProvider>
         <ExpenseContextProvider>
-          <ExpensesTrack />
+          <Home />
         </ExpenseContextProvider>
       </AppContextProvider>
     </div>
