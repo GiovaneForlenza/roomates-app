@@ -1,5 +1,75 @@
 @import "../global.scss";
 
-.createExpenseContainer {
-  border: 1px solid #000;
+@media only screen and (max-width: 600px) {
+  .createExpenseContainer {
+    // form {
+    //   .line {
+    //     display: flex;
+    //     align-items: flex-start;
+    //     justify-content: center;
+    //     flex-direction: column;
+    //     margin: 10px;
+    //     input,
+    //     label {
+    //       margin-bottom: 5px;
+    //     }
+    //     input {
+    //       border: 1px solid #000;
+    //       width: 100%;
+    //       height: 2.5rem;
+    //       border-radius: 5px;
+    //       padding: 5px;
+    //       box-sizing: border-box;
+    //       font-size: 16px;
+    //     }
+    //   }
+
+    .priceContainer {
+      border: 1px solid #000;
+      height: 150px;
+      .price {
+        height: 70%;
+        border: 1px solid #00f;
+        .amountContainer {
+          height: 100%;
+          .amount {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+            width: 100%;
+            input {
+              width: 100%;
+              font-size: 25px;
+              height: 50%;
+            }
+            border: 1px solid #f00;
+          }
+        }
+      }
+      .optionsContainer {
+        border: 1px solid #000;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .whoPaidContainer,
+        .storeContainer {
+          border: 1px solid #000;
+          width: 40%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          .label {
+            font-size: 15px;
+          }
+          .whoPaid,
+          .store {
+            font-size: 18px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
 }
