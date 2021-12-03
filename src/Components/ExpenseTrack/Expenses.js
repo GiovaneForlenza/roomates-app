@@ -35,7 +35,7 @@ function Expenses() {
   }, []);
 
   return (
-    <div className="expenses-container">
+    <div className="expensesContainer">
       {expenses.length !== 0 ? (
         <>
           {expenses.map((expense) => {
@@ -48,7 +48,7 @@ function Expenses() {
           <Spacer height={60} /> */}
         </>
       ) : (
-        <div className="no-expenses-container">
+        <div className="noExpensesContainer">
           <span>No expenses this week</span>
         </div>
       )}

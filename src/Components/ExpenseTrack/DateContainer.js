@@ -27,7 +27,7 @@ function DateContainer() {
   }
 
   return (
-    <div className="dates-container">
+    <div className="datesContainer">
       <header className="datesHeader">
         <div className="controls">
           <div className="roundButtonSmall" onClick={() => changeDate(-7)}>

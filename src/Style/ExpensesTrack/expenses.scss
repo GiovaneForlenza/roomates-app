@@ -1,9 +1,12 @@
 @import "../global.scss";
 
 @media only screen and (max-width: 600px) {
-  .expenses-container {
-    margin-top: 20px;
-    .no-expenses-container {
+  .expensesContainer {
+    background: $clrBackgroundContainer;
+    border-radius: $containerBorderRadius;
+    margin: 10px;
+
+    .noExpensesContainer {
       span {
         font-size: 25px;
         font-weight: bold;
