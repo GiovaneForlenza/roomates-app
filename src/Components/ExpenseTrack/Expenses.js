@@ -39,7 +39,7 @@ function Expenses() {
       {expenses.length !== 0 ? (
         <>
           {expenses.map((expense) => {
-            // addToAmount(expense.whoPaid, expense.amount);
+            console.log(expense);
             return (
               <Expense key={expense.expenseId.toString()} expense={expense} />
             );
