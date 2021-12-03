@@ -28,7 +28,7 @@ function DateContainer() {
 
   return (
     <div className="dates-container">
-      <header className="dates-header">
+      <header className="datesHeader">
         <div className="controls">
           <div className="roundButtonSmall" onClick={() => changeDate(-7)}>
             <FiChevronLeft />

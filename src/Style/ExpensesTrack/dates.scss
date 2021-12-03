@@ -2,7 +2,7 @@
 
 @media only screen and (max-width: 600px) {
   .dates-container,
-  .dates-header,
+  .datesHeader,
   .controls {
     display: flex;
     align-items: center;
@@ -11,7 +11,7 @@
 
   .dates-container {
     justify-content: center;
-    .dates-header {
+    .datesHeader {
       justify-content: space-between;
       flex-direction: column;
       .controls {

@@ -7,14 +7,20 @@ $transition: 0.5s all;
 
 $clrDarkRed: rgb(212, 0, 0);
 $clrLightGray: rgb(230, 230, 230);
+$clrBackgroundBody: #121212;
+$clrBackgroundContainer: #1e1e1e;
 
 * {
   font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  color: $clrLightGray;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
   .container {
-    width: 80%;
+    background: $clrBackgroundBody;
     margin: auto;
     display: flex;
     align-items: center;
@@ -29,6 +35,12 @@ $clrLightGray: rgb(230, 230, 230);
       justify-content: center;
       cursor: $cursorPointer;
       box-shadow: $boxShadow;
+    }
+    .dates-container {
+      padding: 10px;
+      border-radius: 10px;
+      box-sizing: border-box;
+      background: $clrBackgroundContainer;
     }
   }
 }
