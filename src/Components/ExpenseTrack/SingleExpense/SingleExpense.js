@@ -4,6 +4,7 @@ import { ExpenseContext } from "../../../Contexts/ExpenseContext";
 import { IoMdArrowBack } from "react-icons/io";
 
 import "../../../Style/SingleExpense/singleExpense.scss";
+import "../../../Style/GeneralStyle/containerHeader.scss";
 
 function SingleExpense() {
   const { amount, date, whoPaid, store, fillExpenseInfo } =

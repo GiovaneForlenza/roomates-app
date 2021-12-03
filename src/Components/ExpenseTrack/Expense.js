@@ -7,7 +7,7 @@ import "../../Style/ExpensesTrack/expense.scss";
 
 const Expense = (props) => {
   const { expenseId, amount, date, whoPaid, store } = props.expense;
-  const { fillExpenseInfo, day, setDay, month, setMonth, addToAmount } =
+  const { fillExpenseInfo, day, setDay, month, setMonth } =
     useContext(ExpenseContext);
 
   const parsedAmount = parseFloat(amount).toFixed(2);
@@ -19,7 +19,6 @@ const Expense = (props) => {
   useEffect(() => {
     setDay(date.substring(0, 2));
     setMonth(date.substring(6, 3));
-    addToAmount(whoPaid);
   }, []);
 
   return (

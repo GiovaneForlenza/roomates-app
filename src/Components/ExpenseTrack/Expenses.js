@@ -13,8 +13,17 @@ import "../../Style/ExpensesTrack/expenses.scss";
 function Expenses() {
   const [expenses, setExpenses] = useState([]);
   const { herokuURL } = useContext(AppContext);
-  const { addToAmount } = useContext(ExpenseContext);
+  const { totalAmountG, setTotalAmountG, totalAmountD, setTotalAmountD } =
+    useContext(ExpenseContext);
 
+  function addToAmount(whoPaid, amount) {
+    if (whoPaid === "G") {
+      console.log("a");
+      setTotalAmountG(totalAmountG + 1);
+    } else {
+      setTotalAmountD(parseFloat(totalAmountD) + parseFloat(amount));
+    }
+  }
   useEffect(() => {
     axios.get(`${herokuURL}/get-expenses`).then((res) => {
       if (res.message) {
@@ -30,13 +39,13 @@ function Expenses() {
       {expenses.length !== 0 ? (
         <>
           {expenses.map((expense) => {
+            // addToAmount(expense.whoPaid, expense.amount);
             return (
               <Expense key={expense.expenseId.toString()} expense={expense} />
             );
           })}
-          <ExpenseSummary />
-
-          <Spacer height={60} />
+          {/* <ExpenseSummary />
+          <Spacer height={60} /> */}
         </>
       ) : (
         <div className="no-expenses-container">

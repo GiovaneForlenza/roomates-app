@@ -4,6 +4,7 @@ export const ExpenseContext = createContext();
 
 export const ExpenseContextProvider = (props) => {
   const [isSingleRequestOpen, setIsSingleRequestOpen] = useState(false);
+
   const [expenseId, setExpenseId] = useState("");
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
@@ -12,8 +13,8 @@ export const ExpenseContextProvider = (props) => {
   const [whoPaid, setWhoPaid] = useState("");
   const [store, setStore] = useState("");
 
-  const [totalAmountG, setTotalAmountG] = useState(0);
-  const [totalAmountD, setTotalAmountD] = useState(0);
+  const [totalAmountG, setTotalAmountG] = useState(0.0);
+  const [totalAmountD, setTotalAmountD] = useState(0.0);
 
   function fillExpenseInfo(action, expenseId, amount, date, whoPaid, store) {
     if (action === "fill") {
@@ -30,14 +31,6 @@ export const ExpenseContextProvider = (props) => {
       setWhoPaid("");
       setStore("");
       setIsSingleRequestOpen(false);
-    }
-  }
-
-  function addToAmount(whoPaid) {
-    if (whoPaid === "G") {
-      setTotalAmountG(parseFloat(totalAmountG) + parseFloat(amount));
-    } else {
-      setTotalAmountD(parseFloat(totalAmountD) + parseFloat(amount));
     }
   }
   return (
@@ -64,7 +57,7 @@ export const ExpenseContextProvider = (props) => {
         totalAmountD,
         setTotalAmountD,
         fillExpenseInfo,
-        addToAmount,
+        // addToAmount,
       }}
     >
       {props.children}
